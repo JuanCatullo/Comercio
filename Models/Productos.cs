@@ -111,8 +111,6 @@ namespace Comercio.Models
 
             }
 
-
-
             return sRet;
         }
 

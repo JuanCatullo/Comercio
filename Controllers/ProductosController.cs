@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Results;
 using HttpDeleteAttribute = System.Web.Http.HttpDeleteAttribute;
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
 using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
@@ -18,6 +19,7 @@ namespace Comercio.Controllers
     {
         // GET api/<controller>
         [HttpGet]
+        [System.Web.Http.Route("api/Productos")]
         public IEnumerable<Models.Productos> Get()
         {
            
@@ -25,16 +27,12 @@ namespace Comercio.Controllers
             string sRet = "";
             List<Models.Productos> ListaProductos = (List<Productos>)Productos.ObtenerProductos(-1, ref sRet);
 
-            
+           
 
             return ListaProductos;
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+   
 
         [HttpPost]
         public IHttpActionResult InsertarProducto([FromBody] Models.Productos NuevoProducto)
@@ -107,5 +105,64 @@ namespace Comercio.Controllers
 
             return Ok("Se borro");
         }
+
+        [HttpPost]
+        [Route("api/Productos/FiltrarPorMonto")]
+        public IHttpActionResult FiltrarPorMonto(FiltradoProductos request)
+        {
+          
+            if (request.Monto < 1 || request.Monto > 1000000)
+            {
+                return BadRequest("El monto debe estar comprendido entre 1 y 1.000.000.");
+            }
+
+            try
+            {
+               
+                string sRet = "";
+                List<Productos> todosLosProductos = (List<Productos>)Productos.ObtenerProductos(-1, ref sRet);
+
+                
+                Dictionary<int, Productos> productosFiltrados = new Dictionary<int, Productos>();
+
+                
+                foreach (var producto in todosLosProductos)
+                {
+                    if (!productosFiltrados.ContainsKey(producto.CategoriaId))
+                    {
+                        productosFiltrados[producto.CategoriaId] = producto;
+                    }
+                    else if (producto.Precio > productosFiltrados[producto.CategoriaId].Precio)
+                    {
+                        productosFiltrados[producto.CategoriaId] = producto;
+                    }
+                }
+
+                
+                List<Productos> productosSeleccionados = new List<Productos>();
+                decimal sumaPrecios = 0;
+                foreach (var producto in productosFiltrados.Values)
+                {
+                    if (sumaPrecios + producto.Precio <= request.Monto)
+                    {
+                        productosSeleccionados.Add(producto);
+                        sumaPrecios += producto.Precio;
+                    }
+                }
+
+               
+                if (productosSeleccionados.Count < 2)
+                {
+                    return BadRequest("No hay suficientes productos disponibles para ofrecer al cliente.");
+                }
+
+                return Ok(productosSeleccionados);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
     }
 }
+    
