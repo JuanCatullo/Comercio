@@ -19,7 +19,7 @@ namespace Comercio.Controllers
     {
         // GET api/<controller>
         [HttpGet]
-        [System.Web.Http.Route("api/Productos")]
+        [Route("api/ObtenerProductos")]
         public IEnumerable<Models.Productos> Get()
         {
            
@@ -35,6 +35,7 @@ namespace Comercio.Controllers
    
 
         [HttpPost]
+        [Route("api/InsertarProducto")]
         public IHttpActionResult InsertarProducto([FromBody] Models.Productos NuevoProducto)
         {
             //CODIGO PARA INSERTAR UN PRODUCTO
@@ -60,6 +61,7 @@ namespace Comercio.Controllers
         }
 
         [HttpPut]
+        [Route("api/ModificarProducto")]
         public IHttpActionResult ModificarProducto([FromBody] Models.Productos ProductoExistente)
         {
             
@@ -89,6 +91,7 @@ namespace Comercio.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete]
+        [Route("api/EliminarProducto")]
         public IHttpActionResult EliminarProducto(int id)
         {
             string sRet = "";
@@ -153,7 +156,7 @@ namespace Comercio.Controllers
                
                 if (productosSeleccionados.Count < 2)
                 {
-                    return BadRequest("No hay suficientes productos disponibles para ofrecer al cliente.");
+                    return BadRequest("No hay suficientes productos disponibles para ofrecer al cliente");
                 }
 
                 return Ok(productosSeleccionados);

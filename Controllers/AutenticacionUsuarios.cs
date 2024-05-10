@@ -8,11 +8,11 @@ namespace Comercio.Controllers
 {
     public class AutenticacionUsuarios
     {
-        private readonly string SecretPassword = "7A26F4A905EB1F7F8395E68B4D5C32B2";
+        private readonly string Password = "7A26F4A905EB1F7F8395E68B4D5C32B2";
 
         public string GenerarToken(string nombreUsuario)
         {
-            var clave = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretPassword));
+            var clave = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Password));
             var credenciales = new SigningCredentials(clave, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
@@ -35,7 +35,7 @@ namespace Comercio.Controllers
         public ClaimsPrincipal ValidarToken(string token)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var clave = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretPassword));
+            var clave = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Password));
 
             try
             {
