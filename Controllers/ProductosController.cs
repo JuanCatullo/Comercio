@@ -1,22 +1,31 @@
 ﻿using Comercio.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using HttpDeleteAttribute = System.Web.Http.HttpDeleteAttribute;
+using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
+using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
+using HttpPutAttribute = System.Web.Http.HttpPutAttribute;
 
 namespace Comercio.Controllers
 {
     public class ProductosController : ApiController
     {
         // GET api/<controller>
+        [HttpGet]
         public IEnumerable<Models.Productos> Get()
         {
            
 
             string sRet = "";
             List<Models.Productos> ListaProductos = (List<Productos>)Productos.ObtenerProductos(-1, ref sRet);
+
+            
 
             return ListaProductos;
         }
