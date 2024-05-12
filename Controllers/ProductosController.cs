@@ -17,6 +17,7 @@ namespace Comercio.Controllers
 {
     public class ProductosController : ApiController
     {
+
         // GET api/<controller>
         [HttpGet]
         [Route("api/ObtenerProductos")]
@@ -113,10 +114,10 @@ namespace Comercio.Controllers
         [Route("api/Productos/FiltrarPorMonto")]
         public IHttpActionResult FiltrarPorMonto(FiltradoProductos request)
         {
-          
+
             if (request.Monto < 1 || request.Monto > 1000000)
             {
-                return BadRequest("El monto debe estar comprendido entre 1 y 1.000.000.");
+                return BadRequest("El monto debe estar comprendido entre 1 y 1,000,000.");
             }
 
             try
