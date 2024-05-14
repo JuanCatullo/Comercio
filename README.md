@@ -18,6 +18,10 @@ https://github.com/JuanCatullo/ApiRestJuan
 ![Captura de pantalla (61)](https://github.com/JuanCatullo/Comercio/assets/101681675/781407bf-93c5-49a3-bc50-500f2f19f919)
 ![Captura de pantalla (64)](https://github.com/JuanCatullo/Comercio/assets/101681675/3c9ad95c-2569-4535-ba1b-2bb53953a22f)
 ![Captura de pantalla (65)](https://github.com/JuanCatullo/Comercio/assets/101681675/5f078396-c0ab-442f-977f-8ba908e64d39)
+![Captura de pantalla (66)](https://github.com/JuanCatullo/Comercio/assets/101681675/fe3fdc0f-be59-4180-91ab-b646035ec341)
+![Captura de pantalla (67)](https://github.com/JuanCatullo/Comercio/assets/101681675/14b3edf2-09c9-4bf6-8cb4-be7ea485d136)
+![Captura de pantalla (68)](https://github.com/JuanCatullo/Comercio/assets/101681675/2f91038e-b725-4c96-a5b8-79356f11d834)
+
 
 Estoy disponible para cualquier consulta a través de este medio. 
 
