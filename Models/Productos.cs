@@ -28,7 +28,7 @@ namespace Comercio.Models
                 MyDataAdapter = new SqlDataAdapter("spObtenerProductos", MyConnection);
                 MyDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
 
-                MyDataAdapter.SelectCommand.Parameters.AddWithValue("@categoria_id", iCategoria);
+         
 
 
                 DataTable dt = new DataTable();
@@ -76,31 +76,25 @@ namespace Comercio.Models
                 MySqlCommand = new SqlCommand("spInsertarProducto", MyConnection);
                 MySqlCommand.CommandType = CommandType.StoredProcedure;
 
-
+                // Agregar parámetros de entrada
                 MySqlCommand.Parameters.AddWithValue("@nombre", nuevoProducto.Nombre);
                 MySqlCommand.Parameters.AddWithValue("@precio", nuevoProducto.Precio);
-                MySqlCommand.Parameters.AddWithValue("@fecha_carga", nuevoProducto.FechaCarga);               
-                MySqlCommand.Parameters.AddWithValue("@categoria_id", nuevoProducto.CategoriaId);
+                MySqlCommand.Parameters.AddWithValue("@FechaCarga", nuevoProducto.FechaCarga);
+                MySqlCommand.Parameters.AddWithValue("@CategoriaId", nuevoProducto.CategoriaId);
 
-
-                // Agrego los Parámetros al SPROC (OUT)
-
+                // Agregar parámetro de salida
                 SqlParameter pariProductoID = new SqlParameter("@ProductoID", SqlDbType.Int);
                 pariProductoID.Direction = ParameterDirection.Output;
-
                 MySqlCommand.Parameters.Add(pariProductoID);
-
-
 
                 MyConnection.Open();
                 MySqlCommand.ExecuteNonQuery();
 
-                //OBTENGO LOS VALORES DE LOS PARAMETROS DE SALIDA
-                iProductoID = int.Parse(pariProductoID.Value.ToString());
+                // Obtener el valor del parámetro de salida
+                iProductoID = Convert.ToInt32(pariProductoID.Value);
 
                 MyConnection.Close();
                 MyConnection.Dispose();
-
 
                 sRet = "";
 
@@ -108,7 +102,6 @@ namespace Comercio.Models
             catch (Exception ex)
             {
                 sRet = ex.Message;
-
             }
 
             return sRet;
@@ -132,8 +125,8 @@ namespace Comercio.Models
                 MySqlCommand.Parameters.AddWithValue("@id", ProductoExistente.Id);
                 MySqlCommand.Parameters.AddWithValue("@nombre", ProductoExistente.Nombre);
                 MySqlCommand.Parameters.AddWithValue("@precio", ProductoExistente.Precio);
-                MySqlCommand.Parameters.AddWithValue("@fecha_carga", ProductoExistente.FechaCarga);
-                MySqlCommand.Parameters.AddWithValue("@categoria_id", ProductoExistente.CategoriaId);
+                MySqlCommand.Parameters.AddWithValue("@FechaCarga", ProductoExistente.FechaCarga);
+                MySqlCommand.Parameters.AddWithValue("@CategoriaId", ProductoExistente.CategoriaId);
                 
 
 
@@ -172,7 +165,7 @@ namespace Comercio.Models
                 MySqlCommand.CommandType = CommandType.StoredProcedure;
 
 
-                MySqlCommand.Parameters.AddWithValue("@id", id);
+                MySqlCommand.Parameters.AddWithValue("@IdProducto", id);
 
 
 

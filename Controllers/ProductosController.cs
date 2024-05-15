@@ -39,7 +39,7 @@ namespace Comercio.Controllers
         [Route("api/InsertarProducto")]
         public IHttpActionResult InsertarProducto([FromBody] Models.Productos NuevoProducto)
         {
-            //CODIGO PARA INSERTAR UN PRODUCTO
+           
 
             string sRet = "";
             int iProductoID = 0;
@@ -92,7 +92,7 @@ namespace Comercio.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete]
-        [Route("api/EliminarProducto")]
+        [Route("api/Productos/{id}")]
         public IHttpActionResult EliminarProducto(int id)
         {
             string sRet = "";
