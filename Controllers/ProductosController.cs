@@ -26,7 +26,7 @@ namespace Comercio.Controllers
            
 
             string sRet = "";
-            List<Models.Productos> ListaProductos = (List<Productos>)Productos.ObtenerProductos(-1, ref sRet);
+            List<Models.Productos> ListaProductos = (List<Productos>)GestionProductos.ObtenerProductos(-1, ref sRet);
 
            
 
@@ -44,7 +44,7 @@ namespace Comercio.Controllers
             string sRet = "";
             int iProductoID = 0;
 
-            sRet = Models.Productos.InsertarProducto(NuevoProducto, ref iProductoID);
+            sRet = Models.GestionProductos.InsertarProducto(NuevoProducto, ref iProductoID);
 
 
             if (sRet == "")
@@ -68,7 +68,7 @@ namespace Comercio.Controllers
             
             string sRet = "";
 
-            sRet = Models.Productos.ModificarProducto(ProductoExistente);
+            sRet = Models.GestionProductos.ModificarProducto(ProductoExistente);
 
 
             
@@ -97,7 +97,7 @@ namespace Comercio.Controllers
         {
             string sRet = "";
 
-            sRet = Models.Productos.EliminarProducto(id);
+            sRet = Models.GestionProductos.EliminarProducto(id);
             if (sRet == "")
             {
                 
@@ -124,7 +124,7 @@ namespace Comercio.Controllers
             {
                
                 string sRet = "";
-                List<Productos> todosLosProductos = (List<Productos>)Productos.ObtenerProductos(-1, ref sRet);
+                List<Productos> todosLosProductos = (List<Productos>)GestionProductos.ObtenerProductos(-1, ref sRet);
 
                 
                 Dictionary<int, Productos> productosFiltrados = new Dictionary<int, Productos>();
