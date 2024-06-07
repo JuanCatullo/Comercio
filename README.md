@@ -13,7 +13,7 @@ Adjunto la imagen que comprueba que el método ObtenerProductos funciona correc
 ![Captura de pantalla (63)](https://github.com/JuanCatullo/Comercio/assets/101681675/1d49f361-058d-4b7a-94e7-987b40f268d0)
 ![Captura de pantalla (62)](https://github.com/JuanCatullo/Comercio/assets/101681675/ab72cf84-1186-41fb-807b-c76c92533a4a)
                               
-También adjunto el enlace y capturas de un proyecto similar que desarrollé hace aproximadamente 2 meses, donde aparte el proyecto tiene paginacion: 
+También adjunto el enlace y capturas de un proyecto similar que desarrollé hace aproximadamente 2 meses, donde aparte el proyecto tiene paginacion y otras funcionalidades: 
 
 https://github.com/JuanCatullo/ApiRestJuan 
 ![Captura de pantalla (58)](https://github.com/JuanCatullo/Comercio/assets/101681675/a7038aee-ac5d-4501-94b5-719f56567ad2)
