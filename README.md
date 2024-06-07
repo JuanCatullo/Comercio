@@ -7,18 +7,11 @@ ModificarProducto: ![ModificarProducto](https://github.com/JuanCatullo/Comercio/
 EliminarProducto: ![EliminarProducto](https://github.com/JuanCatullo/Comercio/assets/101681675/d350760e-221b-4c4b-82fe-0f5cfed12da8)
 
 FiltrarPorMonto: ![FiltrarPorMonto](https://github.com/JuanCatullo/Comercio/assets/101681675/ef6202ac-c811-458c-b6ea-8d4f74bb33f9)
-
-
-Actualmente está funcionando el metodo ObtenerProductos, los demás metodos no están devolviendo los datos como se espera 
-pero estoy seguro de que con un poco más de tiempo, lo soluciono.
-Dediqué tiempo a investigar y leer documentación sobre los JWT Tokens, ya que no había trabajado con ellos antes.
                                                                                                                                                                                               
 Adjunto la imagen que comprueba que el método ObtenerProductos funciona correctamente:  
 
 ![Captura de pantalla (63)](https://github.com/JuanCatullo/Comercio/assets/101681675/1d49f361-058d-4b7a-94e7-987b40f268d0)
 ![Captura de pantalla (62)](https://github.com/JuanCatullo/Comercio/assets/101681675/ab72cf84-1186-41fb-807b-c76c92533a4a)
-
-Me gustaría destacar que elegí utilizar .NET Framework Web API versión 4.7.2 para este proyecto. 
                               
 También adjunto el enlace y capturas de un proyecto similar que desarrollé hace aproximadamente 2 meses, donde los métodos funcionan correctamente: 
 
@@ -32,10 +25,3 @@ https://github.com/JuanCatullo/ApiRestJuan
 ![Captura de pantalla (66)](https://github.com/JuanCatullo/Comercio/assets/101681675/fe3fdc0f-be59-4180-91ab-b646035ec341)
 ![Captura de pantalla (67)](https://github.com/JuanCatullo/Comercio/assets/101681675/14b3edf2-09c9-4bf6-8cb4-be7ea485d136)
 ![Captura de pantalla (68)](https://github.com/JuanCatullo/Comercio/assets/101681675/2f91038e-b725-4c96-a5b8-79356f11d834)
-
-
-Estoy disponible para cualquier consulta a través de este medio. 
-
-Desde ya, muchas gracias.
-
-Saludos!
